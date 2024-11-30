@@ -194,18 +194,13 @@ public class LightActivity extends AppCompatActivity implements GLSurfaceView.Re
 
     @Override
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-        switch (buttonView.getId()){
-            case R.id.ambient:
-                ambientStrength=isChecked?DEFAULT_AMBIENT:0;
-                break;
-            case R.id.diffuse:
-                diffuseStrength=isChecked?DEFAULT_DIFFUSE:0;
-                break;
-            case R.id.specular:
-                specularStrength=isChecked?DEFAULT_SPECULAR:0;
-                break;
-            default:
-                break;
+        int id = buttonView.getId();
+        if (id == R.id.ambient) {
+            ambientStrength = isChecked ? DEFAULT_AMBIENT : 0;
+        } else if (id == R.id.diffuse) {
+            diffuseStrength = isChecked ? DEFAULT_DIFFUSE : 0;
+        } else if (id == R.id.specular) {
+            specularStrength = isChecked ? DEFAULT_SPECULAR : 0;
         }
     }
 }
